@@ -98,6 +98,7 @@
 
     }
     
+    // 화면 밖을 벗어난, 총 셀의 높이만큼 scrollView의 높이 설정
     self.scrollView.contentSize = CGSizeMake(DEVICE_WIDTH, scrollViewHeight);
     
 }
