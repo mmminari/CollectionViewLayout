@@ -12,7 +12,10 @@
 #define STANDARD_DEVICE_WIDTH                                       414.0f
 #define DEVICE_WIDTH                                                [UIScreen mainScreen].bounds.size.width
 #define WRATIO_WIDTH(w)                                             (w/3.0f) / STANDARD_DEVICE_WIDTH * DEVICE_WIDTH
-#define CELL_WIDTH                                                  (DEVICE_WIDTH - 25.0f) / 4
+#define CELL_WIDTH                                                  ( DEVICE_WIDTH - (COLUMN_COUNT + 1) * CELL_MARGIN ) / COLUMN_COUNT
+
+#define CELL_MARGIN                                                 5.0f
+#define COLUMN_COUNT                                                4
 
 
 @interface ViewController ()
@@ -29,43 +32,48 @@
     
     self.indexList = @[@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b"];
     
-    [self addViewWithList:self.indexList columnCount:10 margin:6.0f];
-    
+    [self addViewWithList:self.indexList];
 
 }
 
-- (void)addViewWithList:(NSArray *)array columnCount:(NSInteger)column margin:(CGFloat)margin
+- (void)addViewWithList:(NSArray *)array
 {
-    CGFloat xValue = margin;
-    CGFloat yValue = margin;
+    // 초기 x,y좌표 위 앞 마진을 제외한 부분부터 시작
+    CGFloat originX = CELL_MARGIN;
+    CGFloat originY = CELL_MARGIN;
     
-    CGFloat cellWidth = (DEVICE_WIDTH - (column + 1) * margin ) / column;
+    CGFloat cellWidth = CELL_WIDTH;
+    CGFloat cellHeight = cellWidth;
     
     for (int i = 0; i < self.indexList.count; i++)
     {
         CGRect viewFrame = CGRectZero;
         
-        NSInteger index = i % column;
+        NSInteger index = i % COLUMN_COUNT;
         
-        if(index != column - 1)
+        // index는 0부터 시작하기 때문에 column count로 나눴을 때
+        // 나머지가 column count 보다 1작은 수가 아닐 때는
+        // x좌표의 값만 증가
+        // column count - 1 일 때는 y좌표의 값 증가, x좌표 값 초기화
+        if(index != COLUMN_COUNT - 1)
         {
-            viewFrame = CGRectMake(xValue, yValue, cellWidth, cellWidth);
+            viewFrame = CGRectMake(originX, originY, cellWidth, cellHeight);
             
-            xValue += cellWidth + margin;
+            originX += cellWidth + CELL_MARGIN;
         }
-        else if(index == column - 1)
+        else if(index == COLUMN_COUNT - 1)
         {
-            viewFrame = CGRectMake(xValue, yValue, cellWidth, cellWidth);
+            viewFrame = CGRectMake(originX, originY, cellWidth, cellHeight);
             
-            xValue = margin;
-            yValue += cellWidth + margin;
+            originX = CELL_MARGIN;
+            originY += cellWidth + CELL_MARGIN;
         }
         
         UIView *view = [[UIView alloc]initWithFrame:viewFrame];
         
         view.backgroundColor = [UIColor blackColor];
         
-        UIButton *button = [[UIButton alloc]initWithFrame:viewFrame];
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, cellWidth, cellHeight)];
         
         [button setTitle:[NSString stringWithFormat:@"%zd", i] forState:UIControlStateNormal];
         
@@ -73,9 +81,9 @@
         
         [button addTarget:self action:@selector(didTouchButton:) forControlEvents:UIControlEventTouchUpInside];
         
-        [self.view addSubview:view];
+        [view addSubview:button];
         
-        [self.view addSubview:button];
+        [self.view addSubview:view];
 
     }
     
