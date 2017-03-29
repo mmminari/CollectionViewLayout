@@ -18,9 +18,11 @@
 #define COLUMN_COUNT                                                4
 
 
-@interface ViewController ()
+@interface ViewController () < UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSArray *indexList;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -30,7 +32,8 @@
 {
     [super viewDidLoad];
     
-    self.indexList = @[@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b"];
+    self.indexList = @[@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"b"];
+
     
     [self addViewWithList:self.indexList];
 
@@ -44,6 +47,8 @@
     
     CGFloat cellWidth = CELL_WIDTH;
     CGFloat cellHeight = cellWidth;
+    
+    CGFloat scrollViewHeight = 0.0f;
     
     for (int i = 0; i < self.indexList.count; i++)
     {
@@ -60,6 +65,9 @@
             viewFrame = CGRectMake(originX, originY, cellWidth, cellHeight);
             
             originX += cellWidth + CELL_MARGIN;
+    
+            // scrollViewHeight는 마지막 y좌표에서 cellheight와 아래마진을 더한 값
+            scrollViewHeight = originY + cellHeight + CELL_MARGIN;
         }
         else if(index == COLUMN_COUNT - 1)
         {
@@ -67,6 +75,9 @@
             
             originX = CELL_MARGIN;
             originY += cellWidth + CELL_MARGIN;
+            
+            // scrollViewHeight는 마지막 y좌표 값 (이미 y좌표 값을 증가시켰기 때문)
+            scrollViewHeight = originY ;
         }
         
         UIView *view = [[UIView alloc]initWithFrame:viewFrame];
@@ -83,9 +94,11 @@
         
         [view addSubview:button];
         
-        [self.view addSubview:view];
+        [self.scrollView addSubview:view];
 
     }
+    
+    self.scrollView.contentSize = CGSizeMake(DEVICE_WIDTH, scrollViewHeight);
     
 }
 

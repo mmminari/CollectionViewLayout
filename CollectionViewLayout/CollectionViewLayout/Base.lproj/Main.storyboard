@@ -20,8 +20,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-Ix-eyD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XWa-tU-Ilo"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nbm-Ix-eyD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2sY-wR-fzA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nbm-Ix-eyD" secondAttribute="bottom" id="IxP-Uy-ib0"/>
+                            <constraint firstItem="nbm-Ix-eyD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XAQ-yi-bHL"/>
+                            <constraint firstAttribute="trailing" secondItem="nbm-Ix-eyD" secondAttribute="trailing" id="uqp-1D-Nkf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="nbm-Ix-eyD" id="mdG-9P-Ggn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
