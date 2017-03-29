@@ -27,36 +27,38 @@
 {
     [super viewDidLoad];
     
-    self.indexList = @[@"a", @"b", @"a", @"b", @"a", @"b"];
+    self.indexList = @[@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b"];
     
-    [self addViewWithList:self.indexList];
+    [self addViewWithList:self.indexList columnCount:10 margin:6.0f];
     
 
 }
 
-- (void)addViewWithList:(NSArray *)array
+- (void)addViewWithList:(NSArray *)array columnCount:(NSInteger)column margin:(CGFloat)margin
 {
-    static CGFloat xValue = 5.0f;
-    static CGFloat yValue = 5.0f;
+    CGFloat xValue = margin;
+    CGFloat yValue = margin;
+    
+    CGFloat cellWidth = (DEVICE_WIDTH - (column + 1) * margin ) / column;
     
     for (int i = 0; i < self.indexList.count; i++)
     {
         CGRect viewFrame = CGRectZero;
         
-        NSInteger index = i % 4;
+        NSInteger index = i % column;
         
-        if(index != 3)
+        if(index != column - 1)
         {
-            viewFrame = CGRectMake(xValue, yValue, CELL_WIDTH, CELL_WIDTH);
+            viewFrame = CGRectMake(xValue, yValue, cellWidth, cellWidth);
             
-            xValue += CELL_WIDTH + 5.0f;
+            xValue += cellWidth + margin;
         }
-        else if(index == 3)
+        else if(index == column - 1)
         {
-            viewFrame = CGRectMake(xValue, yValue, CELL_WIDTH, CELL_WIDTH);
+            viewFrame = CGRectMake(xValue, yValue, cellWidth, cellWidth);
             
-            xValue = 5.0f;
-            yValue += CELL_WIDTH + 5.0f;
+            xValue = margin;
+            yValue += cellWidth + margin;
         }
         
         UIView *view = [[UIView alloc]initWithFrame:viewFrame];
