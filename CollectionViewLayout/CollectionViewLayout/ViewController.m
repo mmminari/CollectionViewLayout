@@ -15,7 +15,7 @@
 #define CELL_WIDTH                                                  ( DEVICE_WIDTH - (COLUMN_COUNT + 1) * CELL_MARGIN ) / COLUMN_COUNT
 
 #define CELL_MARGIN                                                 5.0f
-#define COLUMN_COUNT                                                4
+#define COLUMN_COUNT                                                6
 
 
 @interface ViewController () < UIScrollViewDelegate>
@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     
-    self.indexList = @[@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"b"];
+    self.indexList = @[@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"b", @"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"a", @"b", @"a", @"b", @"a", @"b",@"b", @"a", @"b",@"b"];
 
     
     [self addViewWithList:self.indexList];
@@ -65,9 +65,7 @@
             viewFrame = CGRectMake(originX, originY, cellWidth, cellHeight);
             
             originX += cellWidth + CELL_MARGIN;
-    
-            // scrollViewHeight는 마지막 y좌표에서 cellheight와 아래마진을 더한 값
-            scrollViewHeight = originY + cellHeight + CELL_MARGIN;
+
         }
         else if(index == COLUMN_COUNT - 1)
         {
@@ -75,9 +73,7 @@
             
             originX = CELL_MARGIN;
             originY += cellWidth + CELL_MARGIN;
-            
-            // scrollViewHeight는 마지막 y좌표 값 (이미 y좌표 값을 증가시켰기 때문)
-            scrollViewHeight = originY ;
+
         }
         
         UIView *view = [[UIView alloc]initWithFrame:viewFrame];
@@ -94,9 +90,14 @@
         
         [view addSubview:button];
         
+        // scrollViewHeight는 마지막 cell이 가지는 최대 y좌표와 아래마진을 더한 값
+        scrollViewHeight = CGRectGetMaxY(view.frame) + 5.0f;
+        
         [self.scrollView addSubview:view];
 
     }
+    
+    
     
     // 화면 밖을 벗어난, 총 셀의 높이만큼 scrollView의 높이 설정
     self.scrollView.contentSize = CGSizeMake(DEVICE_WIDTH, scrollViewHeight);
