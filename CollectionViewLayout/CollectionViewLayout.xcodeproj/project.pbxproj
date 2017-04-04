@@ -14,6 +14,8 @@
 		6D0D024F1E8A5DC600BC40FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0D024E1E8A5DC600BC40FC /* Assets.xcassets */; };
 		6D0D02521E8A5DC600BC40FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0D02501E8A5DC600BC40FC /* LaunchScreen.storyboard */; };
 		6D0D025D1E8A5DC600BC40FC /* CollectionViewLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D025C1E8A5DC600BC40FC /* CollectionViewLayoutTests.m */; };
+		6D7FFF841E8E2F7200FE4126 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7FFF821E8E2F7200FE4126 /* CustomCell.m */; };
+		6D7FFF851E8E2F7200FE4126 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7FFF831E8E2F7200FE4126 /* CustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		6D0D02581E8A5DC600BC40FC /* CollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0D025C1E8A5DC600BC40FC /* CollectionViewLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayoutTests.m; sourceTree = "<group>"; };
 		6D0D025E1E8A5DC600BC40FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D7FFF811E8E2F7200FE4126 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		6D7FFF821E8E2F7200FE4126 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		6D7FFF831E8E2F7200FE4126 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +95,9 @@
 				6D0D02501E8A5DC600BC40FC /* LaunchScreen.storyboard */,
 				6D0D02531E8A5DC600BC40FC /* Info.plist */,
 				6D0D02421E8A5DC600BC40FC /* Supporting Files */,
+				6D7FFF811E8E2F7200FE4126 /* CustomCell.h */,
+				6D7FFF821E8E2F7200FE4126 /* CustomCell.m */,
+				6D7FFF831E8E2F7200FE4126 /* CustomCell.xib */,
 			);
 			path = CollectionViewLayout;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 			files = (
 				6D0D02521E8A5DC600BC40FC /* LaunchScreen.storyboard in Resources */,
 				6D0D024F1E8A5DC600BC40FC /* Assets.xcassets in Resources */,
+				6D7FFF851E8E2F7200FE4126 /* CustomCell.xib in Resources */,
 				6D0D024D1E8A5DC600BC40FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +225,7 @@
 			files = (
 				6D0D024A1E8A5DC600BC40FC /* ViewController.m in Sources */,
 				6D0D02471E8A5DC600BC40FC /* AppDelegate.m in Sources */,
+				6D7FFF841E8E2F7200FE4126 /* CustomCell.m in Sources */,
 				6D0D02441E8A5DC600BC40FC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +423,7 @@
 				6D0D02631E8A5DC600BC40FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D0D02641E8A5DC600BC40FC /* Build configuration list for PBXNativeTarget "CollectionViewLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +432,7 @@
 				6D0D02661E8A5DC600BC40FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
