@@ -41,7 +41,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="c9q-CB-pDH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uhr-YF-BHx"/>
                             <constraint firstAttribute="trailing" secondItem="c9q-CB-pDH" secondAttribute="trailing" id="b3R-Sw-a4J"/>
