@@ -14,6 +14,9 @@
 		6D0D024F1E8A5DC600BC40FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0D024E1E8A5DC600BC40FC /* Assets.xcassets */; };
 		6D0D02521E8A5DC600BC40FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0D02501E8A5DC600BC40FC /* LaunchScreen.storyboard */; };
 		6D0D025D1E8A5DC600BC40FC /* CollectionViewLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D025C1E8A5DC600BC40FC /* CollectionViewLayoutTests.m */; };
+		6D5E1A551E94880F004E3F00 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5E1A531E94880F004E3F00 /* CustomCell.m */; };
+		6D5E1A561E94880F004E3F00 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5E1A541E94880F004E3F00 /* CustomCell.xib */; };
+		6D7D44491E93847200F24C35 /* CustomVerticalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7D44481E93847200F24C35 /* CustomVerticalLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		6D0D02581E8A5DC600BC40FC /* CollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0D025C1E8A5DC600BC40FC /* CollectionViewLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayoutTests.m; sourceTree = "<group>"; };
 		6D0D025E1E8A5DC600BC40FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D5E1A521E94880F004E3F00 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		6D5E1A531E94880F004E3F00 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		6D5E1A541E94880F004E3F00 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		6D7D44471E93847200F24C35 /* CustomVerticalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomVerticalLayout.h; sourceTree = "<group>"; };
+		6D7D44481E93847200F24C35 /* CustomVerticalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomVerticalLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,11 @@
 				6D0D02501E8A5DC600BC40FC /* LaunchScreen.storyboard */,
 				6D0D02531E8A5DC600BC40FC /* Info.plist */,
 				6D0D02421E8A5DC600BC40FC /* Supporting Files */,
+				6D7D44471E93847200F24C35 /* CustomVerticalLayout.h */,
+				6D7D44481E93847200F24C35 /* CustomVerticalLayout.m */,
+				6D5E1A521E94880F004E3F00 /* CustomCell.h */,
+				6D5E1A531E94880F004E3F00 /* CustomCell.m */,
+				6D5E1A541E94880F004E3F00 /* CustomCell.xib */,
 			);
 			path = CollectionViewLayout;
 			sourceTree = "<group>";
@@ -196,6 +209,7 @@
 			files = (
 				6D0D02521E8A5DC600BC40FC /* LaunchScreen.storyboard in Resources */,
 				6D0D024F1E8A5DC600BC40FC /* Assets.xcassets in Resources */,
+				6D5E1A561E94880F004E3F00 /* CustomCell.xib in Resources */,
 				6D0D024D1E8A5DC600BC40FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,9 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7D44491E93847200F24C35 /* CustomVerticalLayout.m in Sources */,
 				6D0D024A1E8A5DC600BC40FC /* ViewController.m in Sources */,
 				6D0D02471E8A5DC600BC40FC /* AppDelegate.m in Sources */,
 				6D0D02441E8A5DC600BC40FC /* main.m in Sources */,
+				6D5E1A551E94880F004E3F00 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +429,7 @@
 				6D0D02631E8A5DC600BC40FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D0D02641E8A5DC600BC40FC /* Build configuration list for PBXNativeTarget "CollectionViewLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +438,7 @@
 				6D0D02661E8A5DC600BC40FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
